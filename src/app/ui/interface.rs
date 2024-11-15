@@ -5,8 +5,8 @@ use std::sync::Arc;
 use crossterm::event::{DisableMouseCapture, EnableMouseCapture};
 use crossterm::execute;
 use crossterm::terminal::{disable_raw_mode, enable_raw_mode, EnterAlternateScreen, LeaveAlternateScreen};
-use tui::backend::{Backend, CrosstermBackend};
-use tui::Terminal;
+use ratatui::backend::{Backend, CrosstermBackend};
+use ratatui::Terminal;
 
 use super::{Context, Painter, TabBar, View};
 use crate::app::Config;

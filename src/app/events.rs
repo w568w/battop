@@ -1,4 +1,3 @@
-use std::io;
 use std::sync::mpsc;
 use std::thread;
 
@@ -30,7 +29,6 @@ impl EventHandler {
         let input_handle = {
             let tx = tx.clone();
             thread::spawn(move || {
-                let stdin = io::stdin();
                 trace!("Input thread spawned");
                 while let Ok(_) = crossterm::event::poll(timeout) {
                     if let Ok(CrosstermEvent::Key(key)) = crossterm::event::read() {
@@ -38,22 +36,27 @@ impl EventHandler {
                             KeyEvent {
                                 code: KeyCode::Left,
                                 modifiers: _,
+                                ..
                             } => Event::PreviousTab,
                             KeyEvent {
                                 code: KeyCode::Right,
                                 modifiers: _,
+                                ..
                             } => Event::NextTab,
                             KeyEvent {
                                 code: KeyCode::Char('q'),
                                 modifiers: _,
+                                ..
                             } => Event::Exit,
                             KeyEvent {
                                 code: KeyCode::Char('c'),
                                 modifiers: KeyModifiers::CONTROL,
+                                ..
                             } => Event::Exit,
                             KeyEvent {
                                 code: KeyCode::Esc,
                                 modifiers: _,
+                                ..
                             } => Event::Exit,
                             _ => continue,
                         };

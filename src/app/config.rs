@@ -31,7 +31,7 @@ pub struct Config {
         short = "d",
         long = "delay",
         default_value = "1",
-        parse(try_from_str = "parse_duration")
+        parse(try_from_str = parse_duration)
     )]
     /// Delay between updates, in seconds
     delay: Duration,
@@ -40,7 +40,8 @@ pub struct Config {
         short = "u",
         long = "units",
         default_value = "human",
-        raw(possible_values = "&Units::arg_variants()", case_insensitive = "true")
+        possible_values = &Units::arg_variants(),
+        case_insensitive = true
     )]
     /// Measurement units displayed
     units: Units,
