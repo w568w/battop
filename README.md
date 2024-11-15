@@ -9,31 +9,23 @@
 `battop` is an interactive viewer, similar to `top`, `htop` and other *top utilities,
 but about the batteries installed in your notebook.
 
-![Screenshot](https://raw.githubusercontent.com/svartalf/rust-battop/master/assets/screenshot.png)
+**The original repository has been inactive for several years, so I decided to fork it and continue the development.**
+
+![Screenshot](https://raw.githubusercontent.com/w568w/battop/master/assets/screenshot.png)
 
 ## Features
 
- * Cross-platform (Linux, MacOS, FreeBSD and DragonflyBSD are supported and Windows is [on the way](https://github.com/svartalf/rust-battop/issues/5))
+ * Cross-platform (Linux, MacOS, FreeBSD and DragonflyBSD **and Windows** are supported)
  * Supports multiple batteries in case your notebook have them 
  * It is free
  * Usually it just works!
 
-`battop` is backed by a Rust crate [battery](https://crates.io/crates/battery)
+`battop` is backed by a Rust crate [starship-battery](https://crates.io/crates/starship-battery)
 which provides unified cross-platform information about system batteries.\
-[Check it out](https://github.com/svartalf/rust-battery),
+[Check it out](https://github.com/starship/rust-battery/),
 if you want to gather the same information for your application!
 
 ## Installation
-
-[![Packaging status](https://repology.org/badge/vertical-allrepos/battop.svg)](https://repology.org/project/battop/versions)
-
-### Arch linux
-
-Install package from [AUR](https://aur.archlinux.org/packages/battop/) with your favorite AUR helper:
-
-```
-$ yay -S battop
-```
 
 ### From sources
 
@@ -42,10 +34,6 @@ Clone the repo and run
 ```
 $ cargo build --release
 ```
-
-### Other
-
-Prebuilt binaries for Linux, FreeBSD and MacOS can be downloaded from the [GitHub releases page](https://github.com/svartalf/rust-battop/releases).
 
 ## Usage
 
@@ -58,7 +46,3 @@ Run the `battop -h` command to see the additional available options.
 ## License
 
 `battop` is double-released under the Apache License, Version 2.0 or the MIT License.
-
-## Donations
-
-If you appreciate my work and want to support me, you can do it [here](https://svartalf.info/donate/)
